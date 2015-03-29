@@ -1,0 +1,35 @@
+@grid-columns:              12;
+@grid-gutter-width:         0px;
+@grid-float-breakpoint:     768px;
+
+#render-page { margin-top: 50px; }
+
+/* Menus */ 
+  
+  .navbar-inner { background: #ffffff; border-bottom: 1px solid #DDDDDD; }
+  
+  #menu-top.navbar-inner { font-size: 14px; }
+  
+  #menu-top a { color: #999999; text-shadow: 1px 1px 2px #dba123; }
+  
+  #menu-settings { padding: 20px; background-color: #EEEEEE; }
+  
+ /* Active link */
+  
+  #menu-top .navbar-inner .navbar-nav>.active>a,
+#menu-top .navbar-inner .navbar-nav>.active>a:hover,
+#menu-top .navbar-inner .navbar-nav>.active>a:focus {
+    color: #FFFFFF;
+    background-color: #CCCCCC; text-shadow: none;
+}
+
+ /* Hover link */
+
+ #menu-top.navbar-inner .navbar-nav>li>a:hover,
+#menu-top.navbar-inner .navbar-nav>li>a:focus {
+    color: #FFFFFF;
+    background-color: #DDDDDD; 
+     text-shadow: none; 
+}
+
+/* fin Menus*/
