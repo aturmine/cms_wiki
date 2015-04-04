@@ -24,8 +24,8 @@ $di = new Phalcon\DI\FactoryDefault();
 $di->set('db', function () {
 	return new Phalcon\Db\Adapter\Pdo\Mysql(array(
 		'host' => '127.0.0.1',
-        'username' => 'wikibe',
-        'password' => 'wiK18e_@2581',
+    'username' => 'wikibe',
+    'password' => 'wiK18e_@2581',
 		'dbname' => 'wikibe'
 	));
 });
@@ -38,22 +38,14 @@ $di->set('view', function() use ($config){
 
 $di->set('url', function () {
     $url = new UrlResolver();
-    $url->setBaseUri('/wikibe/');
+    $url->setBaseUri('/wiki_cms/');
     return $url;
 }, true);
-
-/*
-$di->set('router', function () {
-    $router = new Phalcon\Mvc\Router();
-	return $router;
-});
-*/
 
 $application = new \Phalcon\Mvc\Application($di);
 
 echo $application->handle()->getContent();
 
 }catch (Exception $e) {
-	echo $e->getMessage(), '<br>';
-	echo nl2br(htmlentities($e->getTraceAsString()));
+	echo $e->getMessage();
 }
