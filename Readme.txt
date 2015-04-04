@@ -3,7 +3,9 @@
 CMS_wiki est basé sur le système CPhalcon, une extension PHP fondé sur le langage C.
 
 Base de donnée : MySQL
+Version php : PHP 5.4
 Service javascript : Bootstrap, jquery
+Service Socket.io (node.js) : Non
 
 // Nomenclature pour les feuilles de style
 

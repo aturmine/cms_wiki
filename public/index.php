@@ -1,27 +1,28 @@
 <?php
 
+
 error_reporting(E_ALL);
 
 try {
 
-define('BASE_DIR', dirname(__DIR__));
-define('APP_DIR', BASE_DIR . '/app');
+define('APP_DIR', '../app');
 
 require APP_DIR . '/controllers/ControllerBase.php';
 
 
-$loader = new \Phalcon\Loader();
-    $loader->registerDirs(
-        array(
-        	APP_DIR . '/controllers',
-        	APP_DIR . '/models',
+$loader = new Phalcon\Loader();
+
+$loader->registerDirs(
+  array(
+        APP_DIR . '/controllers/',
+        APP_DIR . '/models/'
         )
-    )->register();
+)->register();
 
 
 $di = new Phalcon\DI\FactoryDefault();
 
-$di->set('db', function () {
+$di->set('db', function (){
 	return new Phalcon\Db\Adapter\Pdo\Mysql(array(
 		'host' => '127.0.0.1',
     'username' => 'wikibe',
@@ -30,13 +31,13 @@ $di->set('db', function () {
 	));
 });
 
-$di->set('view', function() use ($config){
+$di->set('view', function(){
         $view = new \Phalcon\Mvc\View();
-        $view->setViewsDir(APP_DIR . '/views');
+        $view->setViewsDir(APP_DIR . '/views/');
         return $view;
     });
 
-$di->set('url', function () {
+$di->set('url', function (){
     $url = new UrlResolver();
     $url->setBaseUri('/wiki_cms/');
     return $url;
